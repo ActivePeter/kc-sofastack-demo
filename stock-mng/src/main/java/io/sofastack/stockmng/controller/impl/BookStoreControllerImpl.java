@@ -20,6 +20,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.alipay.sofa.runtime.api.annotation.SofaReference;
+import com.alipay.sofa.runtime.api.annotation.SofaReferenceBinding;
+
 /**
  * @author yuanyuan
  * @Since 2019/6/10
@@ -29,8 +32,10 @@ public class BookStoreControllerImpl implements BookStoreController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BookStoreControllerImpl.class);
 
+    @SofaReference(interfaceType = StockMngFacade.class, uniqueId = "${service.unique.id}", binding = @SofaReferenceBinding(bindingType = "bolt"))
     private StockMngFacade stockMngFacade;
 
+    @SofaReference(interfaceType = BalanceMngFacade.class, uniqueId = "${service.unique.id}", binding = @SofaReferenceBinding(bindingType = "bolt"))
     private BalanceMngFacade balanceMngFacade;
 
     @Override

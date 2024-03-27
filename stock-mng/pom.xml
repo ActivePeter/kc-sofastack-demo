@@ -16,7 +16,14 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
-
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 	<dependencies>
 		<dependency>
 			<groupId>io.sofastack</groupId>
@@ -41,7 +48,31 @@
 		</dependency>
 
 		<!-- 引入依赖在这里 -->
-
+		<!--SOFARPC 依赖-->
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>rpc-sofa-boot-starter</artifactId>
+		</dependency>
+		<!--SOFATracer 依赖-->
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>tracer-sofa-boot-starter</artifactId>
+		</dependency>
+		<!--SOFARegistry 依赖-->
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>registry-client-all</artifactId>
+		</dependency>
+		<!--runtime 依赖-->
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>runtime-sofa-boot-starter</artifactId>
+		</dependency>
+		<!--SOFALookout 依赖-->
+		<dependency>
+			<groupId>com.alipay.sofa.lookout</groupId>
+			<artifactId>lookout-sofa-boot-starter</artifactId>
+		</dependency>
 
 
 	</dependencies>

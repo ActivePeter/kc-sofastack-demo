@@ -6,10 +6,12 @@ import io.sofastack.balance.manage.model.Balance;
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 
-/**
- * @author yuanyuan
- * @since 2019/6/10
- */
+import org.springframework.stereotype.Service;
+import com.alipay.sofa.runtime.api.annotation.SofaService;
+import com.alipay.sofa.runtime.api.annotation.SofaServiceBinding;
+
+@Service
+@SofaService(interfaceType = BalanceMngFacade.class, uniqueId = "${service.unique.id}", bindings = { @SofaServiceBinding(bindingType = "bolt") })
 public class BalanceMngImpl implements BalanceMngFacade {
     @Resource
     private BalanceMngMapper balanceMngMapper;
